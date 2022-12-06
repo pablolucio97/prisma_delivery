@@ -31,8 +31,7 @@ export class AuthenticateClientUseCase {
             expiresIn: '1d'
         })
 
-        return {
-            token
-        }
+        return token
+       
     }
 }
