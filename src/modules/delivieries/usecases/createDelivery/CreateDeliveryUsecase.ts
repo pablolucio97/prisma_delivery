@@ -8,7 +8,7 @@ interface ICreateDelivery {
 //IN THIS CASE, THE CLIENT CREATES A NEW DELIVERY FOR THE 
 //DELIVERYMAN CAN BE AWARE IT
 
-export class CreateDeliveryUsecase {
+export class CreateDeliveryUseCase {
     async execute({ id_client, item_name }: ICreateDelivery) {
         const delivery = await prisma.deliveries.create({
             data: {

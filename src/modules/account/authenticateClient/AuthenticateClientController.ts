@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { AuthenticateClientUseCase } from './AuthenticateClientUsecase';
+import { AuthenticateClientUseCase } from './AuthenticateClientUseCase';
 
 class AuthenticateClientController {
     async handle(req: Request, res: Response): Promise<Response> {
