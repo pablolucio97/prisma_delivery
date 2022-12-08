@@ -1,3 +1,4 @@
+import { ListDeliveriesController } from './../../../modules/delivieries/usecases/listDeliveriesUseCase/ListDeliveriesController';
 
 import { Router } from 'express';
 import { CreateDeliveryController } from '../../../modules/delivieries/usecases/createDelivery/CreateDeliveryController';
@@ -11,6 +12,7 @@ const deliveriesRoutes = Router()
 const createDeliveryController = new CreateDeliveryController()
 const findAllWithoutEndDateController = new FindAllWithoutEndDateController()
 const updateDeliveryToDeliverymanController = new UpdateDeliveryToDeliverymanController()
+const listDeliveriesController = new ListDeliveriesController()
 
 deliveriesRoutes.post(
     '/',
@@ -27,5 +29,7 @@ deliveriesRoutes.put(
     EnsureDeliverymanAuthenticate,
     updateDeliveryToDeliverymanController.handle
 )
+
+deliveriesRoutes.get('/all', EnsureDeliverymanAuthenticate, listDeliveriesController.handle )
 
 export { deliveriesRoutes };
